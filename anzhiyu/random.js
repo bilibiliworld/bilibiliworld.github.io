@@ -1,0 +1,1 @@
+var posts=["2023/09/08/B站视频/","2023/09/07/hello-world/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
