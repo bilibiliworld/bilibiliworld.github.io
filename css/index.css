@@ -6727,77 +6727,6 @@ h1.page-title + .tag-cloud-list {
   margin-right: 1rem;
   box-shadow: var(--anzhiyu-shadow-border);
 }
-:root {
-  --card-friend-class-desc-bgcolor: #e7e7e7;
-  --card-friend-name-color: #000;
-  --card-friend-item-hover: #e1e1e1;
-  --card-friend-descr-color: #797979;
-}
-[data-theme="dark"] {
-  --card-friend-class-desc-bgcolor: #111;
-  --card-friend-name-color: #fff;
-  --card-friend-item-hover: #222;
-  --card-friend-descr-color: #797979;
-}
-#aside-content .card-widget.card-friend-link {
-  padding: 20px 0px;
-}
-.card-widget.card-friend-link .card-friend-link-container {
-  max-height: 460px;
-  overflow: scroll;
-}
-.card-widget.card-friend-link .card-friend-link-container::-webkit-scrollbar {
-  display: none;
-}
-.card-widget.card-friend-link summary.card-friend-class-desc {
-  padding: 0px 15px;
-}
-.card-widget.card-friend-link details.card-friend-class-name[open] summary.card-friend-class-desc {
-  position: sticky;
-  top: 0px;
-  background: var(--card-friend-class-desc-bgcolor);
-  z-index: 1;
-}
-.card-widget.card-friend-link a.card-friend-item {
-  padding: 0px 15px;
-  height: 60px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.card-widget.card-friend-link a.card-friend-item:hover {
-  background-color: var(--card-friend-item-hover);
-}
-.card-widget.card-friend-link img.card-friend-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 10px 10px;
-}
-.card-widget.card-friend-link .offline-friend-link img.card-friend-avatar {
-  filter: grayscale(100%);
-}
-.card-widget.card-friend-link .card-friend-details {
-  width: auto;
-  height: 60px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.card-widget.card-friend-link .card-friend-name {
-  color: var(--card-friend-name-color);
-}
-.card-widget.card-friend-link .card-friend-descr {
-  font-size: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 12em;
-  color: var(--card-friend-descr-color);
-}
 #post-comment .comment-head {
   margin-bottom: 20px;
   font-size: 0.8em !important;
@@ -7077,6 +7006,17 @@ h1.page-title + .tag-cloud-list {
   background-attachment: fixed;
   border-radius: 0;
 }
+@media screen and (max-width: 768px) {
+  #page-header #center-console + label i {
+    background: var(--font-color);
+  }
+}
+#page-header #site-info {
+  position: absolute;
+  top: 43%;
+  padding: 0 10px;
+  width: 100%;
+}
 #page-header #site-title,
 #page-header #site-subtitle,
 #page-header #scroll-down .scroll-down-effects {
@@ -7161,7 +7101,7 @@ h1.page-title + .tag-cloud-list {
   overflow: hidden;
   animation: header 5s linear forwards;
   animation-timeline: view();
-  background-color: var(--anzhiyu-bar-background);
+  background-color: var(--anzhiyu-main);
 }
 #page-header.post-bg #nav {
   transition: all 0.5s, border 0.3s;
@@ -7203,13 +7143,17 @@ h1.page-title + .tag-cloud-list {
   user-select: none;
   transform: rotate(10deg) translateY(-10%) scale(var(--anzhiyu-header-cover-scale));
   will-change: transform;
-  filter: blur(10px);
+  filter: blur(10px) brightness(60%);
+  animation: none;
+  transition: filter 0s;
+  margin: auto;
+  width: auto;
 }
-@media screen and (min-width: 768px) {
-  #page-header.post-bg #post-top-cover {
-    animation: showCover 1s 0.3s backwards;
-    opacity: 0.5;
-  }
+#page-header.post-bg #post-top-cover::after {
+  display: none;
+}
+#page-header.post-bg #post-top-cover img {
+  border-radius: 0;
 }
 @media screen and (max-width: 768px) {
   #page-header.post-bg #post-top-cover {
@@ -7217,8 +7161,8 @@ h1.page-title + .tag-cloud-list {
     transform: rotate(0deg) translateY(0) scale(1);
     filter: blur(0px);
     width: 100%;
-    position: fixed;
-    height: 30rem;
+    position: absolute;
+    height: 100vh;
     z-index: 1;
   }
 }
@@ -7251,7 +7195,7 @@ h1.page-title + .tag-cloud-list {
 @media screen and (max-width: 768px) {
   #page-header.post-bg #post-top-cover #post-top-bg {
     min-height: 15rem !important;
-    height: 70% !important;
+    height: 100% !important;
     opacity: 1 !important;
   }
 }
@@ -7280,15 +7224,6 @@ h1.page-title + .tag-cloud-list {
     background: var(--anzhiyu-card-bg);
     outline: 1px solid var(--anzhiyu-card-border);
   }
-}
-#page-header.post-bg:before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  content: '';
-  transition: 0s;
-  background-color: var(--anzhiyu-bar-background);
-  animation: slide-in-op 0.6s 0s forwards;
 }
 #page-header #post-info {
   position: absolute;
@@ -7322,18 +7257,6 @@ h1.page-title + .tag-cloud-list {
   #page-header #post-info {
     padding: 11rem 6% 0;
     align-items: center;
-  }
-  #page-header #post-info:after {
-    display: block;
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0px -265px 287px 45px var(--anzhiyu-bar-background) inset;
-    z-index: 0;
-    animation: none;
   }
 }
 #page-header.not-top-img {
@@ -7866,10 +7789,6 @@ h1.page-title + .tag-cloud-list {
 @media screen and (max-width: 768px) {
   .layout > div:first-child:not(.recent-posts) {
     z-index: 10;
-  }
-  #page-header.post-bg #nav {
-    background: linear-gradient(to top, var(--anzhiyu-main-none) 0%, var(--anzhiyu-bar-background) 100%);
-    transition: 0s;
   }
   .post-bg:has(.bldbanner) #post-info:after,
   .post-bg:has(.bili-banner) #post-info:after,
@@ -8791,6 +8710,32 @@ h1.page-title + .tag-cloud-list {
     background: var(--anzhiyu-main);
     transition: 0.3s;
     box-shadow: var(--anzhiyu-shadow-main);
+  }
+}
+@media screen and (max-width: 768px) {
+  #nav {
+    background: var(--anzhiyu-card-bg) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #page-header #nav #site-name,
+  #page-header #nav #toggle-menu,
+  #page-header:not(.not-top-img) #nav .back-home-button {
+    color: var(--font-color) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #blog_name a,
+  .mask-name-container a,
+  #menus a,
+  #nav-right .nav-button a,
+  #nav-right #toggle-menu a {
+    color: var(--font-color) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  div#bbTimeList {
+    margin: 20px 15px !important;
   }
 }
 #pagination .toPageGroup {

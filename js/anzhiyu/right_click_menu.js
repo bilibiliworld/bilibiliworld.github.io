@@ -359,11 +359,11 @@ function replaceAll(string, search, replace) {
   return string.split(search).join(replace);
 }
 
-// 百度搜索
+// 萌娘百科
 rm.searchBaidu = function () {
-  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  anzhiyu.snackbarShow("即将跳转到萌娘百科", false, 2000);
   setTimeout(function () {
-    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+    window.open("https://zh.moegirl.org.cn/" + selectTextNow);
   }, "2000");
   rm.hideRightMenu();
 };
