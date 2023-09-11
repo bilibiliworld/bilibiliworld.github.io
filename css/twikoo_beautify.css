@@ -80,8 +80,8 @@
 
   /* 右下角小人 */
   .el-textarea__inner {
-    background-image: url(https://gcore.jsdelivr.net/gh/bilibiliworld/picgo/2TGiaM7e.webp) !important;
+    background-image: url(https://cdn.staticaly.com/gh/bilibiliworld/picgo@main/2023/09/11/20230911130252-1.webp) !important;
   }
   .el-textarea__inner:focus {
-    background-image: url(https://gcore.jsdelivr.net/gh/bilibiliworld/picgo/csZIXsim.webp) !important;
+    background-image: url(https://cdn.staticaly.com/gh/bilibiliworld/picgo@main/2023/09/11/20230911130252.webp) !important;
   }
