@@ -34,6 +34,35 @@
     </entry>
     
     
+    
+    <entry>
+      <title>hexo优化小寄巧</title>
+      <link href="/2023/08/26/hexo%E4%BC%98%E5%8C%96%E5%B0%8F%E5%AF%84%E5%B7%A7/"/>
+      <url>/2023/08/26/hexo%E4%BC%98%E5%8C%96%E5%B0%8F%E5%AF%84%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="获取网站logo"><a href="#获取网站logo" class="headerlink" title="获取网站logo"></a>获取网站logo</h2><blockquote><p>直接访问这个网址下载图标，格式为 <code>域名/favicon.ico</code></p></blockquote><h2 id="修改主题颜色"><a href="#修改主题颜色" class="headerlink" title="修改主题颜色"></a>修改主题颜色</h2><blockquote><p>在主题文件的 <code>/source/css/matery.css</code> 文件中，搜索 <code>.bg-color</code> 来修改背景颜色：</p></blockquote><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */</span><span class="token selector">.bg-color</span> <span class="token punctuation">&#123;</span>    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to right<span class="token punctuation">,</span> #4cbf30 0%<span class="token punctuation">,</span> #0f9d58 100%<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token atrule"><span class="token rule">@-webkit-keyframes</span> rainbow</span> <span class="token punctuation">&#123;</span>   <span class="token comment">/* 动态切换背景颜色. */</span><span class="token punctuation">&#125;</span><span class="token atrule"><span class="token rule">@keyframes</span> rainbow</span> <span class="token punctuation">&#123;</span>    <span class="token comment">/* 动态切换背景颜色. */</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="网站鼠标写法"><a href="#网站鼠标写法" class="headerlink" title="网站鼠标写法"></a>网站鼠标写法</h2><blockquote><p>在主题的css文件夹中新建mouse.css，其中写入：</p></blockquote><pre class="line-numbers language-none"><code class="language-none">body &#123;    cursor: url(https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;sviptzk&#x2F;HexoStaticFile@latest&#x2F;Hexo&#x2F;img&#x2F;default.cur),        default;&#125;a,img &#123;    cursor: url(https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;sviptzk&#x2F;HexoStaticFile@latest&#x2F;Hexo&#x2F;img&#x2F;pointer.cur),        default;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>在头文件(head.ejs)中引入<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/mouse.css&quot;&gt;</code></p></blockquote><h2 id="html语言显示"><a href="#html语言显示" class="headerlink" title="html语言显示"></a>html语言显示</h2><blockquote><p>在你的 md 文章页中，部分内容不想经过 Hexo 渲染，则包一层 raw 标签：</p></blockquote><pre class="line-numbers language-none"><code class="language-none">&#123;% raw %&#125;&lt;div class&#x3D;&quot;&quot;&gt;你的一些代码...&lt;&#x2F;div&gt;&lt;script&gt;你的一些代码...&lt;&#x2F;script&gt;&#123;% endraw %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>例如：</p><div class="">你的一些代码...</div><script>你的一些代码...</script><p>那么标签内的代码就不会被框架渲染了~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文章 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> matery-pro </tag>
+            
+            <tag> 美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
